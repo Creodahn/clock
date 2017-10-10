@@ -19,6 +19,7 @@ class Clock {
     return `${hh}:${mm}:${ss} ${meridian}`;
   }
 
+  // handle hour separately to create 12 hour clock and prevent leading 0
   checkHour(hh) {
     let result;
 
@@ -36,6 +37,7 @@ class Clock {
     return result;
   }
 
+  // check number value to add leading zero if needed
   checkNumber(num) {
     return num < 10 ? `0${num}` : num.toString();
   }
