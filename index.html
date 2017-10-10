@@ -4,7 +4,7 @@
     <script src="./index.js"></script>
   </head>
   <body>
-    <div class="clock hidden" id="clockface"></div>
+    <div class="clock hidden" id="clockface">Starting clock...</div>
     <div class="button-container">
       <button type="button" id="startBtn" class="hidden" onClick="start();">Start</button>
       <button type="button" id="stopBtn" onClick="stop();">Stop</button>
@@ -27,6 +27,8 @@
       }
 
       start();
+
+      document.getElementById('clockface').classList.remove('hidden');
     </script>
   </body>
 </html>

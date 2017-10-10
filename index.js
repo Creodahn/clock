@@ -12,10 +12,28 @@ class Clock {
   }
 
   formatTime() {
-    const hh = this.checkNumber(this.hh),
+    const meridian = this.hh > 12 ? 'PM' : 'AM',
+          hh = this.checkHour(this.hh),
           mm = this.checkNumber(this.mm),
           ss = this.checkNumber(this.ss);
-    return `${hh}:${mm}:${ss}`;
+    return `${hh}:${mm}:${ss} ${meridian}`;
+  }
+
+  checkHour(hh) {
+    let result;
+
+    switch(true) {
+      case hh > 12:
+        result = hh - 12;
+        break;
+      case hh === 0:
+        result = 12;
+        break;
+      default:
+        result = hh;
+    }
+
+    return result;
   }
 
   checkNumber(num) {
