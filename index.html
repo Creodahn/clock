@@ -6,14 +6,23 @@
   <body>
     <div class="clock" id="clockface"></div>
     <div class="button-container">
-      <button type="button">Start</button>
-      <button type="button">Stop</button>
+      <button type="button" onClick="start();">Start</button>
+      <button type="button" onClick="stop();">Stop</button>
     </div>
 
     <script>
-      const clock = new Clock();
+      const clock = new Clock(),
+            id = 'clockface';
 
-      clock.start('clockface');
+      clock.start(id);
+
+      function start() {
+        clock.start(id);
+      }
+
+      function stop() {
+        clock.stop();
+      }
     </script>
   </body>
 </html>
