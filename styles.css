@@ -1,0 +1,11 @@
+.clock {
+  background-color: #dedede;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}

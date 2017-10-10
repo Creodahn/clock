@@ -1,28 +1,32 @@
 <html>
   <head>
-    <link rel="./styles.css"/>
+    <link rel="stylesheet" href="./styles.css"/>
     <script src="./index.js"></script>
   </head>
   <body>
-    <div class="clock" id="clockface"></div>
+    <div class="clock hidden" id="clockface"></div>
     <div class="button-container">
-      <button type="button" onClick="start();">Start</button>
-      <button type="button" onClick="stop();">Stop</button>
+      <button type="button" id="startBtn" class="hidden" onClick="start();">Start</button>
+      <button type="button" id="stopBtn" onClick="stop();">Stop</button>
     </div>
 
     <script>
-      const clock = new Clock(),
-            id = 'clockface';
-
-      clock.start(id);
+      const clock = new Clock();
 
       function start() {
-        clock.start(id);
+        clock.start('clockface');
+
+        document.getElementById('startBtn').classList.add('hidden');
+        document.getElementById('stopBtn').classList.remove('hidden');
       }
 
       function stop() {
         clock.stop();
+        document.getElementById('startBtn').classList.remove('hidden');
+        document.getElementById('stopBtn').classList.add('hidden');
       }
+
+      start();
     </script>
   </body>
 </html>
