@@ -12,7 +12,7 @@ class Clock {
   }
 
   formatTime() {
-    const meridian = this.hh > 12 ? 'PM' : 'AM',
+    const meridian = this.hh >= 12 ? 'PM' : 'AM',
           hh = this.checkHour(this.hh),
           mm = this.checkNumber(this.mm),
           ss = this.checkNumber(this.ss);
