@@ -16,6 +16,7 @@ class Clock {
           hh = this.checkHour(this.hh),
           mm = this.checkNumber(this.mm),
           ss = this.checkNumber(this.ss);
+
     return `${hh}:${mm}:${ss} ${meridian}`;
   }
 
